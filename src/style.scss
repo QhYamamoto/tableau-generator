@@ -1,0 +1,68 @@
+@import url('http://fonts.cdnfonts.com/css/doulos-sil');
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  padding: 30px;
+}
+
+body {
+  font-family: 'Doulos SIL', Inter, Avenir, Helvetica, Arial, sans-serif;
+  color: $c-gray--lighter;
+  background-color: $c-gray--darkest;
+  min-height: 100vh;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $c-gray;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $c-gray--light;
+    border-radius: 5px;
+  }
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  color: $c-gray--lighter;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+select {
+  cursor: pointer;
+}
+
+.tableau {
+  &__cell {
+    padding: 0.5em 1em;
+    border-top: 1px solid $c-gray--light;
+    border-right: 1px solid $c-gray--light;
+    border-bottom: 1px solid $c-gray--light;
+    white-space: pre;
+    &.is-shaded {
+      background-color: $c-gray;
+    }
+    &.dashed-right-border {
+      border-right: 1px dashed $c-gray--light;
+    }
+  }
+
+  &__column-1 {
+    border-left: 1px solid $c-gray--light;
+    border-right: 3px double $c-gray--light;
+  }
+}
+
