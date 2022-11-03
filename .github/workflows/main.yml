@@ -1,0 +1,23 @@
+name: CI
+
+on: [push]
+
+jobs:
+  FrontDeploy:
+    name: FrontDeploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+    - name: setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+        cache: 'yarn'
+    - name: Install Dependencies
+      run: yarn install --frozen-lockfile
+    - name: Build
+      run: yarn build
+    - name: deploy to Firebase Hosting
+      run: |
+        firebase deploy --token=${{ secrets.FIREBASE_TOKEN }}
