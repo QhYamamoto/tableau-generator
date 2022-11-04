@@ -1,11 +1,11 @@
-# Tableau Generator (最適性理論 タブロー自動生成アプリ)
+# Tableau Generator (最適性理論 タブロー自動生成アプリ)[^1]
 
 ## 目次
 | 番号 | 項目 |
 |:-:|:--|
 | 1 | [URL](#1url) |
 | 2 | [概要](#2概要) |
-| 3 | [開発環境、主な使用技術](#3開発環境、主な使用技術) |
+| 3 | [開発環境と主な使用技術](#3開発環境と主な使用技術) |
 | 4 | [主要機能](#4主要機能) |
 
 ***
@@ -27,7 +27,7 @@ https://elaborate-lamington-27ccee.netlify.app
   + 既存アプリでは評価結果を自身ですべて手打ちする必要がある
 
 ***
-## 3．開発環境、主な使用技術
+## 3．開発環境と主な使用技術
 OS
 + Windows 11 (WSL2 Ubuntu-20.04.4)
 
@@ -57,14 +57,20 @@ Vitest  ^0.24.0
 + 入力、出力候補、制約(任意の名前)を設定してタブローを作成、編集する(Manualモード)
 + 入力、出力候補、制約(選択画面内のもの)を設定してタブローを作成、編集する(Automaticモード)
   + 以下参考画像はManualモードのもの
+
 ![edit-tableau-1](public/readme/edit-tableau-1.gif)
 ![edit-tableau-2](public/readme/edit-tableau-2.gif)
+
 + 作成したタブローのLaTeXコードを生成する
 ![latex-code](public/readme/latex-code.gif)
+
 + 作成したタブローをxlsxファイルでダウンロードする
 ![excel-tableau](public/readme/excel-tableau.png)
+
 + 各音素の弁別素性を任意の値に設定する
 ![edit-distinctive-feature](public/readme/edit-distinctive-feature.gif)
 
 ***
 [↑目次へ](#目次)
+
+[^1]: 最適性理論に関する基本情報(入力、出力、制約、候補、評価、違反などの概念)についてはWikipedia([日本語版](https://ja.wikipedia.org/wiki/%E6%9C%80%E9%81%A9%E6%80%A7%E7%90%86%E8%AB%96), [英語版](https://en.wikipedia.org/wiki/Optimality_Theory))などをご参照ください。
