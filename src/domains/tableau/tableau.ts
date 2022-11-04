@@ -225,18 +225,6 @@ export class Tableau implements TableauInterface {
     ------------------------------ Private methods ------------------------------
    */
   /**
-   * Set constraint's rightDash property
-   * @param consI Target constraint index
-   * @param rightDash Boolean on whether its right border is dashed or not
-   */
-  private setConstraintRightDash(consI: number, rightDash: boolean): void {
-    const rank = this.constraints[consI].rank
-    const name = this.constraints[consI].name
-    const marks = this.constraints[consI].marks
-    this.constraints[consI] = new Constraint(rank, marks, name, rightDash)
-  }
-
-  /**
    * Get Latex code of First row
    * @param phoneticElsData Currently set PhoneticElements' data
    * @returns Latex code of First row
@@ -364,7 +352,7 @@ export class Tableau implements TableauInterface {
     if (firstLoop) ending = base + '}' // Candidate doesn't contains index
     else if (base)
       ending = base + '}' // Candidate contains index but ends with other letter
-    else ending = '}$\\text{' // Candidate contains ends with index
+    else ending = '}$\\text{' // Candidate ends with index
 
     return tipaStr + ending
   }
