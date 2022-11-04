@@ -4,9 +4,10 @@
   import PageTitle from '../atoms/Text/PageTitle.vue'
   import TheHeader from '../atoms/Text/TheHeader.vue'
   import TheSelector from '../atoms/Form/TheSelector.vue'
-  import { inject } from 'vue'
+  import { inject, ref } from 'vue'
   import { configStoreKey } from '../../store/storeKeys'
   import { ConfigStore } from '../../store/config'
+  import { $hideEl, $showEl } from '../../utils'
 
   const { $phoneticElsData } = inject(configStoreKey) as ConfigStore
 
@@ -19,34 +20,33 @@
 
   const selectorOptions = [
     {
-      value: 'vowel',
+      value: 'vowels',
       label: 'Vowels',
     },
     {
-      value: 'labial',
+      value: 'labials',
       label: 'Labial consonants',
     },
     {
-      value: 'coronal',
+      value: 'coronals',
       label: 'Coronal consonants',
     },
     {
-      value: 'dorsal',
+      value: 'dorsals',
       label: 'Dorsal consonants',
     },
     {
-      value: 'other',
+      value: 'others',
       label: 'Other consonants',
     },
   ]
 
+  const tableSelector = ref('.feature-table--vowels')
+
   const changeTable = (target: HTMLSelectElement): void => {
-    document
-      .querySelectorAll('.feature-table')
-      ?.forEach((el) => el.classList.remove('is-shown'))
-    document
-      .querySelector(`.feature-table--${target.value}`)
-      ?.classList.add('is-shown')
+    $hideEl(tableSelector.value)
+    tableSelector.value = `.feature-table--${target.value}`
+    $showEl(tableSelector.value)
   }
 </script>
 
@@ -63,27 +63,27 @@
     </template>
     <template #feature-table-list>
       <FeatureTable
-        class="feature-table--vowel is-shown"
+        class="feature-table--vowels is-shown"
         :element-type="'Vowels'"
         :phonetic-els="vowels"
       />
       <FeatureTable
-        class="feature-table--labial"
+        class="feature-table--labials"
         :element-type="'Labial consonants'"
         :phonetic-els="labials"
       />
       <FeatureTable
-        class="feature-table--coronal"
+        class="feature-table--coronals"
         :element-type="'Coronal consonants'"
         :phonetic-els="coronals"
       />
       <FeatureTable
-        class="feature-table--dorsal"
+        class="feature-table--dorsals"
         :element-type="'Dorsal consonants'"
         :phonetic-els="dorsals"
       />
       <FeatureTable
-        class="feature-table--other"
+        class="feature-table--others"
         :element-type="'Other consonants'"
         :phonetic-els="others"
       />

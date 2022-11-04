@@ -25,9 +25,9 @@ const getIndexObjects = (): NonSoundElement[] => {
     label: '1, 2, ...9',
     usage: 'Indicates index of an element.',
     exampleForInput:
-      'k{a1i2}t → / ka | __1 | i | __2 | t /\n(One of possible candidates: k{eː | __1,2 | }t → [ keː | __1,2 | t ])',
+      'k{a1i2}t → / ka | __1 | i | __2 | t /\n(Candidate example: k{eː | __1,2 | }t → [ keː | __1,2 | t ])',
     exampleForCandidate:
-      'k{eː1,2}t → [ keː | __1,2 | t ]\nk{a1i2}t → [ ka | __1 | i | __2 | t ]\n(Input: k{a | __1 | i | __2 | }t → / ka | __1 | i | __2 | t /)',
+      'k{eː1,2}t → [ keː | __1,2 | t ]\nk{a1i2}t → [ ka | __1 | i | __2 | t ]\n(Input example: k{a | __1 | i | __2 | }t → / ka | __1 | i | __2 | t /)',
   })
 
   return indexObjects
@@ -60,7 +60,7 @@ export const NON_SOUND_ELEMENTS: NonSoundElement[] = [
     symbol: '_',
     for: 'candidate',
     usage: 'Indicates deletion of an element.',
-    example: '_a.ka → [ a.ka ]\n(input: /taka/)',
+    example: '_a.ka → [ a.ka ]\n(Input example: /taka/)',
   },
   {
     ...DEFAULT_NON_SOUND_ELEMENT,
@@ -86,7 +86,7 @@ export const NON_SOUND_ELEMENTS: NonSoundElement[] = [
     for: 'candidate',
     label: '<>',
     usage: 'Indicates an element where phonological change has occurred.',
-    example: '<d>a<g>a → [ daga ]\n(input: / taka /)',
+    example: '<d>a<g>a → [ daga ]\n(Input example: / taka /)',
   },
   {
     ...DEFAULT_NON_SOUND_ELEMENT,
@@ -102,13 +102,13 @@ export const NON_SOUND_ELEMENTS: NonSoundElement[] = [
     for: 'both',
     label: '{}',
     usageForInput:
-      'Indicates elements which coalesce in at least one of the corresponding candidates.',
+      'Indicates elements which coalesce in at least one of the corresponding Candidates.',
     usageForCandidate:
-      "Indicates elements which possibly coalesce. \n(Note that if Input's value contains these symbols, all candidates' values should contain corresponding ones even if coalescence does'nt take place.)",
+      "Indicates elements which possibly coalesce. \n(Note that if Input's value contains these symbols, all Candidates' values should contain corresponding ones even if coalescence does'nt take place.)",
     exampleForInput:
-      'k{ai}t → / kait /\n(One of possible candidates: k{eː}t → [ keːt ])',
+      'k{ai}t → / kait /\n(Candidate example: k{eː}t → [ keːt ])',
     exampleForCandidate:
-      'k{eː}t → [ keːt ]\nk{ai}t → [ kait ]\n(input: k{ai}t → / kait /)',
+      'k{eː}t → [ keːt ]\nk{ai}t → [ kait ]\n(Input example: k{ai}t → / kait /)',
   },
   {
     ...DEFAULT_NON_SOUND_ELEMENT,

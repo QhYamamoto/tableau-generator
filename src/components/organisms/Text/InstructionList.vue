@@ -46,7 +46,7 @@
       <!-- TODO: IPAの表作成 -->
 
       <InstructionParagraph
-        text="For INPUT of tableaus, the following symbols can be used: 
+        text="For Input of tableaus, the following symbols can be used: 
         (* The right side of the arrow is the input item, and the left side is the item displayed on Tableau.)"
       />
       <InstructionTable
@@ -54,7 +54,7 @@
         :data-arrs="getSymbolDataArr('input')"
       />
       <InstructionParagraph
-        text="For CANDIDATE of tableaus, the following symbols can be used:"
+        text="For Candidate of tableaus, the following symbols can be used:"
       />
       <InstructionTable
         :head-data-arr="['Symbols', 'Usage', 'Example']"
@@ -67,7 +67,7 @@
     <div class="instruction-list__item">
       <InstructionLead text="Supported Constraints" />
       <InstructionParagraph
-        :text="'Currently, we support the constraints in the table below:\n(Highly specific constraints, like ○○-V and ○○-[nas], are excluded.)'"
+        :text="'Currently, we support the Constraints in the table below:\n(Highly specific constraints, like ○○-V and ○○-[nas], are excluded.)'"
       />
       <InstructionTable
         :head-data-arr="['Name', 'Description', 'References']"
