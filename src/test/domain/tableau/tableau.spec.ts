@@ -64,10 +64,6 @@ describe('testTableau', () => {
     const testRank = 5
     tableau.setConstraintRank(0, testRank)
     expect(tableau.constraints[0].rank).toBe(testRank)
-
-    const testRightDash = true
-    tableau['setConstraintRightDash'](0, testRightDash)
-    expect(tableau.constraints[0].rightDash).toBe(testRightDash)
   })
 
   test('testSetMark', () => {
