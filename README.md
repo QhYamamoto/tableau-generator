@@ -58,7 +58,7 @@ OS
 ## 4．主要機能
 + 入力、出力候補、制約(任意の名前)を設定してタブローを作成、編集する(Manualモード)
 + 入力、出力候補、制約(選択画面内のもの)を設定してタブローを作成、編集する(Automaticモード)
-  + 以下参考画像はManualモードのもの
+  + 以下参考画像はManualモードのもの(画面右下のボタンでモード切替)
 
 ![edit-tableau-1](public/readme/edit-tableau-1.gif)
 ![edit-tableau-2](public/readme/edit-tableau-2.gif)
