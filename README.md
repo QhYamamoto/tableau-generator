@@ -38,21 +38,21 @@ OS
 
 主な使用言語
 + Typescript 4.8.4
-+ Sass ^1.52.1
++ Sass 1.54.0
 
 ビルドツール
-+ Vite ^3.0.0
++ Vite 3.2.37
 
 テストツール
-+ Vitest  ^0.24.0
++ Vitest  0.24.0
 
 パッケージマネージャ
 + Yarn 1.22.15
 
 その他
-+ Eslint ^8.22.0
-+ Prettier ^2.7.1
-+ Husky ^8.0.1
++ Eslint 8.22.0
++ Prettier 2.7.1
++ Husky 8.0.1
 
 ***
 ## 4．主要機能
@@ -71,6 +71,12 @@ OS
 
 + 各音素の弁別素性を任意の値に設定する
 ![edit-distinctive-feature](public/readme/edit-distinctive-feature.gif)
+
++ 画面上での音声記号入力
+![ipa-keyboard](public/readme/ipa-keyboard.gif)
+
++ 入力内容のバリデーション
+![validation](public/readme/validation.gif)
 
 ***
 [↑目次へ](#目次)
