@@ -7,6 +7,7 @@
 | 2 | [概要](#2概要) |
 | 3 | [開発環境と主な使用技術](#3開発環境と主な使用技術) |
 | 4 | [主要機能](#4主要機能) |
+| 5 | [工夫した点](#5工夫した点)
 
 ***
 ## 1．URL
@@ -64,19 +65,35 @@ OS
 ![edit-tableau-2](public/readme/edit-tableau-2.gif)
 
 + 作成したタブローのLaTeXコードを生成する
+
 ![latex-code](public/readme/latex-code.gif)
 
 + 作成したタブローをxlsxファイルでダウンロードする
+
 ![excel-tableau](public/readme/excel-tableau.png)
 
 + 各音素の弁別素性を任意の値に設定する
+
 ![edit-distinctive-feature](public/readme/edit-distinctive-feature.gif)
 
 + 画面上での音声記号入力
+
 ![ipa-keyboard](public/readme/ipa-keyboard.gif)
 
 + 入力内容のバリデーション
+
 ![validation](public/readme/validation.gif)
+
+***
+## 5．工夫した点
++ 以下のように処理の種類に応じてファイルを明確に区別することで、本質的に無関係な処理同士が過度に依存することを避けるよう心がけました。ドメインやリポジトリにおける処理はstoreを経由して実行されますが、storeはあくまでもそれらのインターフェースに依存しているに過ぎないため、ドメインやリポジトリの実装が変更されたとしてもstore内では問題が生じないようになっています。
+
+  + グローバルな状態管理など => src/store配下の各ファイル
+  + タブローやタブローに属するinput, candidate, constraintなどに関する処理、制約の評価アルゴリズム => src/domains配下のドメインエンティティ、バリューオブジェクトファイル(storeを経由)
+  + タブローの一括操作(ダウンロード処理) => src/domains配下のドメインサービスファイル(tableauService.ts)
+  + ローカルストレージへのデータ保存、ロードなど =≻ src/repository配下のリポジトリファイル(storeを経由)
+  + UIに関する処理 => 各コンポーネントのvueファイル
+  + 音素や制約の名称や説明など、不変の情報に対する簡易的な処理 => src/consts配下の各ファイル
 
 ***
 [↑目次へ](#目次)
